@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Hello World",
+	"description": "Hello World extension",
+	"version": "1.0",
+	"icons": {
+	"16": "icon_16.png",
+	"128": "icon_128.png"
+	},
+	"permissions": [
+	],
+	"browser_action": {
+		"default_title": "Helloworld",
+		"default_popup": "main.html"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"js": ["content_script.js"],
+		"matches": ["https://*/*"],
+		"run_at": "document_idle"
+	}]
+
+  
+}
